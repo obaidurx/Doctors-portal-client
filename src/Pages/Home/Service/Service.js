@@ -21,7 +21,8 @@ const Service = (props) => {
           minWidth: 275,
           border: 0,
           boxShadow: 0,
-          bgcolor: "#e0f2f1",
+          backgroundColor: "#26a69a",
+          color: "white",
           p: 1,
         }}
       >
@@ -32,11 +33,13 @@ const Service = (props) => {
           alt="green iguana"
         />
         <CardContent>
-          <Typography variant="h5" component="div">
+          <Typography variant="h5" style={{ fontWeight: 500 }}>
             {name}
           </Typography>
 
-          <Typography variant="body2">{description}</Typography>
+          <Typography variant="body2" style={{ fontWeight: 300 }}>
+            {description}
+          </Typography>
         </CardContent>
       </Card>
     </Grid>

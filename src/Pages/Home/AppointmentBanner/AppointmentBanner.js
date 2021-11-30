@@ -30,9 +30,9 @@ const AppointmentBanner = () => {
         >
           <Box style={{ padding: 10, margin: 10 }}>
             <Typography
-              variant="h6"
+              variant="h5"
               sx={{ mb: 3 }}
-              style={{ color: "#4db6ac", fontWeight: 600 }}
+              style={{ color: "#26a69a", fontWeight: 600 }}
             >
               Appointment
             </Typography>
