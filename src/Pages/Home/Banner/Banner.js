@@ -3,7 +3,6 @@ import Grid from "@mui/material/Grid";
 import { Button, Container, Typography } from "@mui/material";
 import bannerBg from "../../../images/bg.png";
 import chair from "../../../images/chair.png";
-import { fontWeight } from "@mui/system";
 
 const banner = {
   background: `url(${bannerBg})`,
