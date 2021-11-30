@@ -8,6 +8,7 @@ import { fontWeight } from "@mui/system";
 const banner = {
   background: `url(${bannerBg})`,
   marginTop: 80,
+  backgroundSize: "cover",
 };
 
 const Banner = () => {
@@ -33,7 +34,11 @@ const Banner = () => {
         <Grid item xs={12} md={7}>
           <img
             src={chair}
-            style={{ width: 500, display: "flex", alignItems: "center" }}
+            style={{
+              width: 500,
+              display: "flex",
+              alignItems: "center",
+            }}
             alt=""
           />
         </Grid>
