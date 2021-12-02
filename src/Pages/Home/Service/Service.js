@@ -20,9 +20,9 @@ const Service = (props) => {
         sx={{
           minWidth: 275,
           border: 0,
-          boxShadow: 0,
-          backgroundColor: "#26a69a",
-          color: "white",
+          boxShadow: 2,
+          // backgroundColor: "#26a69a",
+
           p: 1,
         }}
       >
@@ -37,7 +37,10 @@ const Service = (props) => {
             {name}
           </Typography>
 
-          <Typography variant="body2" style={{ fontWeight: 300 }}>
+          <Typography
+            variant="body2"
+            style={{ fontWeight: 300, color: "gray" }}
+          >
             {description}
           </Typography>
         </CardContent>

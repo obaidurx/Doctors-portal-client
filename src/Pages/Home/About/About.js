@@ -5,12 +5,12 @@ import clock from "../../../images/clock.png";
 import location from "../../../images/location.png";
 import phone from "../../../images/phone-call.png";
 import CardContent from "@mui/material/CardContent";
-import { Card, CardMedia, Typography } from "@mui/material";
+import { Card, CardMedia, Container, Typography } from "@mui/material";
 
 const cards = [
   {
     name: "Opening Hours",
-    description: "Saturday to Wednesday at 10am - 9pm",
+    description: "Saturday to Wednesday at 10am - 9pm ,Friday - Off",
     img: clock,
   },
   {
@@ -26,53 +26,53 @@ const cards = [
 ];
 const About = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
-        {cards.map((card) => (
-          <Grid item xs={12} sm={4} md={4} key={card.name}>
-            <Card
-              style={{
-                display: "flex",
-                marginTop: -15,
-                backgroundColor: "#26a69a",
-                color: "white",
-                alignItems: "center",
-              }}
-              sx={{
-                minWidth: 275,
-                m: 3,
-                mt: 10,
-              }}
-            >
-              <CardMedia
-                component="img"
+    <Container sx={{ flexGrow: 1 }}>
+      <Box>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+        >
+          {cards.map((card) => (
+            <Grid item xs={12} sm={4} md={4} key={card.name}>
+              <Card
                 style={{
-                  width: "auto",
-                  height: "60px",
-                  margin: "auto",
-                  marginLeft: 10,
+                  display: "flex",
+                  marginTop: -15,
+                  backgroundColor: "#26a69a",
+                  color: "white",
+                  alignItems: "center",
                 }}
-                sx={{}}
-                image={card.img}
-                alt="Live from space album cover"
-              />
-              <CardContent>
-                <Typography variant="subtitle2" style={{ fontWeight: 500 }}>
-                  {card.name}
-                </Typography>
-                <Typography variant="subtitle2" style={{ fontWeight: 200 }}>
-                  {card.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+                sx={{
+                  minWidth: 275,
+                  m: 1,
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  style={{
+                    width: "auto",
+                    height: "50px",
+                    margin: "auto",
+                    marginLeft: 10,
+                  }}
+                  image={card.img}
+                  alt="Live from space album cover"
+                />
+                <CardContent>
+                  <Typography variant="subtitle2" style={{ fontWeight: 500 }}>
+                    {card.name}
+                  </Typography>
+                  <Typography variant="subtitle2" style={{ fontWeight: 200 }}>
+                    {card.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Container>
   );
 };
 
