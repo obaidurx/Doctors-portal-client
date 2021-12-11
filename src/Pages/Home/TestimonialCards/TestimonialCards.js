@@ -1,4 +1,3 @@
-import { Container, Grid } from "@mui/material";
 import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -6,6 +5,27 @@ import Typography from "@mui/material/Typography";
 import people1 from "../../../images/people-1.png";
 import people2 from "../../../images/people-2.png";
 import people3 from "../../../images/people-3.png";
+import { Grid } from "@mui/material";
+const cards = [
+  {
+    description:
+      "It is a long-established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal",
+    nam: "Winson Herry",
+    img: people1,
+  },
+  {
+    description:
+      "It is a long-established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal",
+    nam: "Arleen Watson",
+    img: people2,
+  },
+  {
+    description:
+      "It is a long-established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal",
+    nam: "Paul Alex",
+    img: people3,
+  },
+];
 const TestimonialCards = () => {
   return (
     <Grid container spacing={2} sx={{ mb: 5 }}>
