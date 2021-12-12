@@ -1,10 +1,25 @@
-import { Button, Container, Grid, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
+import {
+  Alert,
+  Button,
+  CircularProgress,
+  Container,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { NavLink } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import login from "../../../images/login.png";
+import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({});
+  const { user, loginUser, isLoading, authError } = useAuth();
+  const location = useLocation();
+  const history = useHistory();
+
   const handleOnChange = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -13,7 +28,7 @@ const Login = () => {
     setLoginData(newLoginData);
   };
   const handleLoginSubmit = (e) => {
-    alert("Form is submitted");
+    loginUser(loginData.email, loginData.password, location, history);
     e.preventDefault();
   };
   return (
@@ -52,6 +67,13 @@ const Login = () => {
             <NavLink style={{ textDecoration: "none" }} to="/register">
               <Button variant="text">New User? Please Register</Button>
             </NavLink>
+            {isLoading && <CircularProgress color="secondary" />}
+            {user?.email && (
+              <Alert severity="success">
+                <strong>Congrats !</strong> User Successfully created.
+              </Alert>
+            )}
+            {authError && <Alert severity="error">{authError}!</Alert>}
           </form>
         </Grid>
         <Grid item xs={12} md={6}>
