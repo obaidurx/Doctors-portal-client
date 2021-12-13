@@ -58,7 +58,7 @@ const useFirebase = () => {
   };
 
   const signInWithGoogle = (location, history) => {
-    isLoading(true);
+    setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
